@@ -18,10 +18,69 @@ def kw_c(cur):
         print(tuple(row))
     
 def kw_d(cur):
-    cur_execute("""
-        SELECT 
+    nazwa = input("Podaj nazwę działu: ")
+    print(nazwa)
+    nazwa2 = input("Podaj nazwę siedziby: ")
+    print(nazwa2)
+    
+    cur.execute("""
+        SELECT dzial.id, dzial.nazwa, nazwisko, imie, siedziba
+        FROM pracownicy, dzial
+        WHERE pracownicy.id_dzial = dzial.id 
+        AND dzial.nazwa = ?
+        AND siedziba = ?
+    """, (nazwa, nazwa2))
+
+    wyniki = cur.fetchall() # pobierz wszystkie wiersze
+    for row in wyniki:
+        print(tuple(row))
+        
+def kw_e(cur):
+    cur.execute("""
+        SELECT nazwisko, stanowisko,
+        pracownicy.placa *
+        (SELECT premia.premia 
+        FROM premia
+        WHERE pracownicy.stanowisko = premia.id)
+        AS premia
+        FROM pracownicy
+        ORDER BY premia DESC
     """)
- 
+    
+    wyniki = cur.fetchall() # pobierz wszystkie wiersze
+    for row in wyniki:
+        print(tuple(row))
+        
+def kw_f(cur):
+    kobiety = cur.execute("""
+        SELECT AVG(placa)
+        FROM pracownicy
+        WHERE imie LIKE '%a'
+    """)
+    
+    wyniki = cur.fetchall() # pobierz wszystkie wiersze
+    for row in wyniki:
+        print(tuple(row))
+        
+    men = cur.execute("""
+        SELECT AVG(placa)
+        FROM pracownicy
+        WHERE imie NOT LIKE '%a'
+    """)
+    
+    wyniki = cur.fetchall() # pobierz wszystkie wiersze
+    for row in wyniki:
+        print(tuple(row))
+        
+def kw_g(cur):
+    cur.execute("""
+        SELECT imie, nazwisko, stanowisko,
+        (JulianDay())
+    """)
+    
+    wyniki = cur.fetchall() # pobierz wszystkie wiersze
+    for row in wyniki:
+        print(tuple(row))
  
  
 def main(args):
@@ -29,7 +88,7 @@ def main(args):
     cur = con.cursor()    #utworzenie kursora
     con.row_factory = sqlite3.Row
     
-    kw_c(cur)
+    kw_g(cur)
     
     return 0
 
