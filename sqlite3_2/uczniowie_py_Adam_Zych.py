@@ -78,7 +78,7 @@ def kw_4a(cur):
     wyniki(cur)
     
 def kw_4b(cur):
-    cur.execute('DELETE FROM tbOceny, tbUczniowie WHERE tbOceny.UczenID = tbUczniowie.IDUcznia AND imie = ? AND nazwisko = ? AND PrzedmiotID = ? AND Ocena = ?' ["Paulina", "Dziedzic", 1, 1])
+    cur.execute('DELETE FROM tbOceny, tbUczniowie WHERE tbOceny.UczenID = tbUczniowie.IDUcznia AND imie = ? AND nazwisko = ? AND PrzedmiotID = ? AND Ocena = ?' ['Paulina', 'Dziedzic', 1, 1])
     
 def dodaj(cur):
     cur.execute("""
