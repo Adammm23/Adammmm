@@ -25,6 +25,12 @@ def fromularz():
     return render_template('formularz.html', dane = dane)
 
 
+@app.route('/todo', methods=['GET', 'POST'])
+def todo():
+    form = TodoForm()
+    return render_template('todo.html', form=form)
+
+
 @app.route('/lista')
 def lista():
     """Pobranie wszystkich pytań z bazy i zwrócenie szablonu z listą pytań"""
