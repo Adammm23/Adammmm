@@ -69,10 +69,10 @@
           </div>
 
           <div class="btn-group">
-            <button class="btn btn-primary" type="Dodaj" name="dodaj" onclick="dodaj();">Dodaj</button>
-            <button class="btn btn-primary" type="Dodaj" name="odejmij" onclick="odejmij();">Odejmij</button>
-            <button class="btn btn-primary" type="Dodaj" name="mnoz" onclick="mnoz();">Mnóż</button>
-            <button class="btn btn-primary" type="Dodaj" name="dziel" onclick="dziel();">Dziel</button>
+            <button class="btn btn-primary" type="Dodaj" id="dodaj">Dodaj</button>
+            <button class="btn btn-primary" type="Dodaj" id="odejmij">Odejmij</button>
+            <button class="btn btn-primary" type="Dodaj" id="mnoz">Mnóż</button>
+            <button class="btn btn-primary" type="Dodaj" ="dziel">Dziel</button>
           </div>
 
           <hr>
@@ -104,27 +104,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
-        function dodaj(){
-          liczba1 = parseInt(document.getElementById('liczba1').value);
-          liczba2 = parseInt(document.getElementById('liczba2').value);
-          //alert("Suma " + (liczba1 + liczba2));
-          document.getElementById('wynik').innerHTML = liczba1+liczba2;
-        }
-        function odejmij(){
-          liczba1 = parseInt(document.getElementById('liczba1').value);
-          liczba2 = parseInt(document.getElementById('liczba2').value);
-          document.getElementById('wynik').innerHTML = liczba1-liczba2;
-        }
-        function mnoz(){
-          liczba1 = parseInt(document.getElementById('liczba1').value);
-          liczba2 = parseInt(document.getElementById('liczba2').value);
-          document.getElementById('wynik').innerHTML = liczba1*liczba2;
-        }
-        function dziel(){
-          liczba1 = parseInt(document.getElementById('liczba1').value);
-          liczba2 = parseInt(document.getElementById('liczba2').value);
-          document.getElementById('wynik').innerHTML = liczba1/liczba2;
-        }
+      $(document).ready(function(){
+        $("#dodaj").click(function(){
+          $("#wynik").text($("#liczba1").val() + $("liczba2").val());
+        });
+      });
     </script>
   </body>
 </html>
