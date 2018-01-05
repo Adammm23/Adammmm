@@ -1,0 +1,3 @@
+ioi,,oio,7
+pop,opo,9
+opo,5,0
