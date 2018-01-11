@@ -3,9 +3,14 @@
 #
 #  odczytcsv.py  
 
+import csv
 
 def main(args):
-    return 0
+    plik = open("samochody.txt")
+    tekst = plik.read()
+    plik.close()
+    print(tekst)
+return 0
 
 if __name__ == '__main__':
     import sys
