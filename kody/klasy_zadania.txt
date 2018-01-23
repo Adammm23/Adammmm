@@ -1,0 +1,7 @@
+KLASA UCZEŃ
+imie
+nazwisko
+klasa
+oceny
+średnia()
+ustaw_klase("1A")

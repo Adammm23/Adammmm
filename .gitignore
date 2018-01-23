@@ -1,0 +1,10 @@
+*.o
+*.out
+*.exe
+*.lck
+.~*
+
+_pycache_/
+*.py[cod]
+venv
+pve

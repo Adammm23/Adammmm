@@ -1,10 +1,11 @@
 /*
- * ulamek.cpp
+ * ul_main.cpp
  * 
  */
 
 
 #include <iostream>
+#include "ul_ulamek.h"
 
 using namespace std;
 
