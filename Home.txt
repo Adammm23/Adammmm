@@ -1,0 +1,46 @@
+====== Home ======
+Created czwartek 18 styczeń 2018
+
+**Klasa **- szablon opisujący obiekt, schemat obiektu.
+**Obiekt** - instancja klasy
+_________________________________________________________________________________________
+
+**Podstawowe struktury danych:**
+-stos
+-lista
+-kolejka
+-drzewo
+-kopiec
+-graf
+
+		**Stos -** jest strukturą liniwo uporządkownych danych z których jedynie ostatni elemant jest dostępny (**wierzchołek stosu**).
+
+**LIFO:**
+**L**ast
+**I**n
+**F**irst
+**O**ut
+
+**push()** odaje element na szczycie stosu
+**pop()** usowa elemnt będący wierzchołkiem
+**size()** zwraca liczbę elementów stosu
+**empty()** zwraca true, jeżeli stos jest pusty
+
+		**Kolejka** - przeciwieństwo stosu, pierwszy element jest dostępny.
+
+**FIFO:**
+**F**irst
+**I**n
+**F**irst
+**O**ut
+
+**Głowa kolejki** - pierszy elemnt w kolejce
+**Ogon kolejki** - pierwsze wolne miejce w kolejce
+
+		**Lista** to struktura danych służąca do przechowywania **nieznanej z góry ilości** danych informacji **tego samego typu.**
+
+**Głowa listy** - pierszy elemnt w liście
+**Ogon listy** - pierwsze wolne miejce w liście
+
+		**Drzewo binarne** - jest hierarchiczną strukturą danych którego elementy nazywa się węzłami lub wierzchołkami.
+
