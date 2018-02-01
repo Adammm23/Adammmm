@@ -1,12 +1,11 @@
-CXX=g++
+cxx=g++
 CXXFLAGS=-Wall -I.
-OBJS=uczen.o main.o
+OBJS=lista.o lista_main.o
 
-pong: uczen.o main.o
-	$(CXX) $(CXXFLAGS) $(OBJS) -o main.exe
-	
+pong: lista.o lista_main.o
+	$(CXX) $(CXXFLAGS) $(OBJS) -o lista_main.exe
+
 .PHONY: clean
 
-clean: 
+clean:
 	rm -f *.o *~ core *~
-
