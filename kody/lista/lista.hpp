@@ -3,21 +3,26 @@
 
 struct ELEMENT{
     int wartosc;
-    ELEMENT *nast;  // wskaźnik do następnego elementu listy
+    ELEMENT *wskaznik;
 };
 
-class Lista {
-    private:    // hermetyzacja danych
-        ELEMENT *head;
-        ELEMENT *tail;
-    public:     // interfejs publiczny (API klasy)
-        Lista();    //konstruktor
-        ~Lista();   //dekonstruktor, posprzątanie po klasie
-                // memory leaks - wycieki pamięci
-        void Dodaj(int);
-        void Wyswietl();
-        bool Usun();
-        void Wstaw(int, int);
+class Lista{
+private:
+    ELEMENT *head;
+    ELEMENT *tail; 
+    int i;				  // aktualna liczba elementow na liscie
+ 
+public:
+    
+    Lista();
+    ~Lista();
+    
+    void Dodaj(int);
+    void Wyswietl();
+    void Wstaw(int, int); // wstawia element na podanej pozycji
+    
+    
+    bool Usun();
 };
 
 #endif

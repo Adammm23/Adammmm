@@ -29,13 +29,13 @@ void dodajWezel(Wezel *wezel, int wartosc) {
         korzen = stworzWezel(wartosc); // utworzenie 1. elementu            
     } else {
         if (wartosc < wezel->wartosc) { // wstawiamy wartość mniejszą
-            if(wezzel->lewy != NULL) {
+            if(wezel->lewy != NULL) {
                 dodajWezel(wezel->lewy, wartosc); // rekurancyjne dodawanie do lewego poddrzewa
             } else { // lewy potomek nie istnieje
                 wezel->lewy = stworzWezel(wartosc); // twoerzymy nowy wezel            
             }
         } else { // wstawiamy wartość większą
-            if(wezzel->prawy != NULL) {
+            if(wezel->prawy != NULL) {
                 dodajWezel(wezel->prawy, wartosc); // rekurancyjne dodawanie do lewego poddrzewa
             } else { // prawy potomek nie istnieje
                 wezel->prawy = stworzWezel(wartosc); // twoerzymy nowy wezel            
